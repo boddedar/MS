@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="80f6e259-eff8-4247-ad39-83b627b13f32" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="cicdFlow" doc:id="f2eb3bd5-c19d-48da-959e-286829abc1b9" >
+		<http:listener doc:name="Listener" doc:id="34865ebd-7226-4436-9c1c-0b47c1d35cde" config-ref="HTTP_Listener_config" path="/cicd"/>
+		<logger level="INFO" doc:name="Logger" doc:id="dddd3606-e123-4b6b-83d8-f101a681f248" message="########## Before Logger ############"/>
+		<logger level="INFO" doc:name="Logger" doc:id="106cb67f-85aa-4947-8e67-43e91a76aa24" message="########## Hello World ############"/>
+		<logger level="INFO" doc:name="Logger" doc:id="8e0458d8-318b-4ec8-921e-54666fae0986" message="########## Before Logger ############"/>
+	</flow>
+</mule>
